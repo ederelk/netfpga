@@ -1,0 +1,36 @@
+##http://stackoverflow.com/questions/10404152/perl-script-to-parse-xml-using-xmllibxml
+##http://www.bioperl.org/wiki/Tutorial:Installing_Perl_modules
+##http://stackoverflow.com/questions/1240282/how-can-i-use-perls-xmllibxml-to-extract-an-attribute-in-a-tag
+##By Yaovi E.Kwasi####
+##yk73@njit.edu#######
+
+use XML::LibXML;
+use Math::Int64 qw(int64 uint64);
+use Math::Int64 qw( hex_to_uint64 uint64_to_hex );
+
+my $filename = "dag.xml";
+my $hexi = "0x";
+my $ip_id = "0";
+my $parser = XML::LibXML->new();
+my $xmldoc = $parser->parse_file($filename);
+
+for my $sample ($xmldoc->findnodes('/pdml/packet/proto')) {
+ for my $property ($sample->findnodes('field')) {
+ 	my $name = $property->getAttribute('name') ;
+ 	if($name eq "ip.id"){
+ 	 $ip_id = $property->getAttribute('value');
+ 	 $ip_id = $hexi.$ip_id;
+ 	 $ip_id = hex($ip_id);
+ 	}
+ 	if($name eq "frame.time_delta"){
+ 	my $timestamp = $property->getAttribute('show');
+ 	
+        print $timestamp,"\t",$ip_id+1,"\n";
+	#print $dec_timestamp, "\t",$test,"\n";
+
+
+
+		}
+    }
+
+}
