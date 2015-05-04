@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+	<nf:name>monitor</nf:name>
+	<nf:prefix>monitor</nf:prefix>
+	<nf:location>udp</nf:location>
+	<nf:description>Registers for Monitor Module</nf:description>
+	<nf:blocksize>1024</nf:blocksize>
+	<nf:registers>
+		<nf:register>
+		  <nf:name>key</nf:name>
+			<nf:description>The Key value used by the Monitor Module</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+		<nf:register>
+		  <nf:name>key2</nf:name>
+			<nf:description>The Key value used by the Monitor Module</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+		<nf:register>
+		  <nf:name>key3</nf:name>
+			<nf:description>The Key value used by the Monitor Module</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+
+                <nf:register>
+                        <nf:name>starting</nf:name>
+                        <nf:description>timestamp_reset</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ntp_timestamp_high</nf:name>
+                        <nf:description>MSBs of the timestamp taken from NTP</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ntp_timestamp_low</nf:name>
+                        <nf:description>LSBs of the timestamp taken from NTP</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+		<nf:register>
+			<nf:name>timestamp_discard_high</nf:name>
+			<nf:description>MSBs of the timestamp of the packet discarded by filter</nf:description>
+			<nf:type>counter32</nf:type>
+		</nf:register>
+                <nf:register>
+                        <nf:name>timestamp_discard_low</nf:name>
+                        <nf:description>LSBs of the timestamp of the packet discarded by filter</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+	</nf:registers>
+	<nf:constants>
+	</nf:constants>
+	<nf:types>
+	</nf:types>
+</nf:module>

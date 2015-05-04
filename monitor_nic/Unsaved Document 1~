@@ -1,0 +1,10 @@
+                <nf:register>
+                        <nf:name>ntp_timestamp_high</nf:name>
+                        <nf:description>MSBs of the timestamp taken from NTP</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ntp_timestamp_low</nf:name>
+                        <nf:description>LSBs of the timestamp taken from NTP</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
